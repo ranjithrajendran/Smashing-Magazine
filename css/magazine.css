@@ -60,16 +60,15 @@ header div {
     background-position-x: 65px;
 }
 
+.heads1::after {
+    background-position-x: 78px;
+}
+
 .heads:hover .tilt {
     transform-origin: bottom left;
     transform: rotate(0deg);
     transition: all 0.6s ease;
     box-shadow: none;
-}
-
-.heads:hover after {
-    display: none;
-    backface-visibility: hidden;
 }
 
 .heads:hover {
@@ -125,11 +124,38 @@ topic {
     transition: all .2s ease-out;
 }
 
+@keyframes search1 {
+    0% {
+        padding: 0% 50%
+    }
+    100% {
+        padding: 0% 5%
+    }
+}
+
+@keyframes search2 {
+    0% {
+        height: 0;
+        padding: 0% 0% 0% 0%;
+    }
+    99% {
+        height: 600px;
+    }
+    100% {
+        height: auto;
+        padding: 2% 15% 0% 15%;
+    }
+}
+
 .searchlist {
+    position: relative;
     background-color: #d33a2c;
     padding: 2% 15% 0 15%;
     float: left;
     transition: all 5s ease;
+    height: auto;
+    animation: search2 .25s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .searchlist input {
@@ -141,6 +167,7 @@ topic {
     width: 100%;
     height: 50px;
     border-radius: 8px;
+    animation: search1 .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .searchlist div ul {
@@ -183,9 +210,44 @@ topic {
     background-color: rgba(0, 0, 0, 0.938)
 }
 
+.content {
+    display: inline-block;
+    position: relative;
+}
+
 .content-article {
     background-color: #c40606;
     display: inline-block;
+}
+
+.mainHeading {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Spinnaker', sans-serif;
+    font-weight: 900;
+    color: #cc0909;
+    background-color: #f1eceb;
+    position: absolute;
+    left: 35%;
+    top: .7%;
+    z-index: 1;
+    padding: .7% 1.5%;
+    width: fit-content;
+    box-sizing: border-box;
+}
+
+.colorChange {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    color: rgb(241, 240, 240);
+    background-color: #cf2b1c;
+    position: absolute;
+    left: 80%;
+    top: .7%;
+    z-index: 1;
+    padding: .7% 1.5%;
+    border: 1px solid rgb(250, 247, 247);
+    border-radius: 8px;
 }
 
 .content-article div {
@@ -197,10 +259,14 @@ topic {
     color: white;
     padding: 70px 0 0 100px;
     overflow: hidden;
+    position: relative;
 }
 
-.content {
-    display: inline-block;
+.redAuthor::after {
+    position: absolute;
+    background: url("shadow.png");
+    content: "";
+    background-repeat: no-repeat;
 }
 
 .content-article div img {
@@ -209,12 +275,19 @@ topic {
     height: 110px;
     border: solid rgb(248, 245, 245) 5px;
     border-radius: 5px;
+    padding: 0 0;
 }
 
 .content-article div a {
     font-size: 20px;
     color: rgb(207, 200, 200);
     text-decoration: none;
+}
+
+.content-article div:nth-of-type(1),
+.content-article :nth-of-type(2) {
+    padding-top: 12%;
+    height: 700px;
 }
 
 .content-article div h1 {
@@ -401,7 +474,7 @@ div ul li:hover {
     transition: all .25s;
 }
 
-.list li {
+.list span {
     text-decoration-line: underline;
     text-decoration-color: #076683;
     font-weight: 400;
@@ -432,7 +505,7 @@ div ul li:hover {
 }
 
 .footer {
-    font-family: 'Della Respira', serif;
+    font-family: 'Della Respi10.4.6.73:8088a', serif;
     background: #d33a2c;
     padding: 20px;
     text-align: center;
@@ -627,4 +700,13 @@ a {
     .heads {
         display: none;
     }
+}
+
+.heads:hover,
+.cards:hover,
+.articlesLink:hover,
+.list:hover,
+.but:hover,
+.button:hover {
+    cursor: pointer;
 }
