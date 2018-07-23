@@ -33,3 +33,12 @@ function border(obj) {
 function hideBorder(obj) {
     obj.style.border = "dotted 4px transparent";
 }
+
+function colorChange() {
+    document.body.classList.toggle("convert");
+    if (document.getElementById("colorChange").innerText === "Bring Back Red") {
+        document.getElementById("colorChange").innerText = "Seriously Red";
+    } else {
+        document.getElementById("colorChange").innerText = "Bring Back Red";
+    }
+}

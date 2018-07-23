@@ -220,7 +220,11 @@ topic {
     display: inline-block;
 }
 
-.mainHeading {
+.convert .content-article {
+    background-color: #f1eceb;
+}
+
+.mainHeading1 {
     text-align: center;
     font-size: 30px;
     font-family: 'Spinnaker', sans-serif;
@@ -236,8 +240,18 @@ topic {
     box-sizing: border-box;
 }
 
+.mainHeading2 {
+    left: 44%;
+    top: 1.5%;
+}
+
+.convert .mainHeading1 {
+    background-color: #c40606;
+    color: rgb(241, 240, 240);
+}
+
 .colorChange {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Spinnaker', sans-serif;
     font-weight: 1000;
     color: rgb(241, 240, 240);
     background-color: #cf2b1c;
@@ -250,6 +264,12 @@ topic {
     border-radius: 8px;
 }
 
+.convert .colorChange {
+    background-color: #f8f6f6;
+    color: #cc0909;
+    border: 1.5px solid #c40606;
+}
+
 .content-article div {
     background-color: #b42013;
     display: inline-block;
@@ -260,6 +280,11 @@ topic {
     padding: 70px 0 0 100px;
     overflow: hidden;
     position: relative;
+}
+
+.convert .content-article div {
+    background-color: #f1eceb;
+    color: rgb(14, 13, 13);
 }
 
 .redAuthor::after {
@@ -278,16 +303,48 @@ topic {
     padding: 0 0;
 }
 
+.convert .content-article div img {
+    border: solid #c40606 5px;
+}
+
 .content-article div a {
     font-size: 20px;
     color: rgb(207, 200, 200);
     text-decoration: none;
 }
 
+.convert .content-article div a {
+    color: #cf2b1c;
+}
+
 .content-article div:nth-of-type(1),
 .content-article :nth-of-type(2) {
-    padding-top: 12%;
+    padding-top: 14%;
     height: 700px;
+}
+
+.content-article div:nth-of-type(3n+1) {
+    background-color: #b32c20;
+}
+
+.content-article div:nth-of-type(3n+2) {
+    background-color: #cf2b1c;
+}
+
+.content-article div:nth-of-type(3n+3) {
+    background-color: #a1271c;
+}
+
+.convert .content-article div:nth-of-type(3n+1) {
+    background-color: #f5f5f5;
+}
+
+.convert .content-article div:nth-of-type(3n+2) {
+    background-color: #fcfcfc;
+}
+
+.convert .content-article div:nth-of-type(3n+3) {
+    background-color: #f8f6f6;
 }
 
 .content-article div h1 {
@@ -305,6 +362,10 @@ topic {
     width: 85%;
     justify-content: space-between;
     color: rgb(233, 233, 233);
+}
+
+.convert .content-article div h3 {
+    color: rgb(24, 23, 23);
 }
 
 .content-cards {
